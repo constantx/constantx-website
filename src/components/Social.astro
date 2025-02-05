@@ -1,0 +1,55 @@
+---
+const social = [
+  {
+    type: 'linkedin',
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/constantx',
+  },
+  {
+    type: 'github',
+    title: 'GitHub',
+    href: 'https://github.com/constantx',
+  },
+  {
+    type: 'dribbble',
+    title: 'Dribbble', 
+    href: 'https://dribbble.com/constantx',
+  },
+  {
+    type: 'angellist', 
+    title: 'AngelList',
+    href: 'https://angel.co/constantx',
+  },
+  {
+    type: 'email',
+    title: 'or email me',
+    href: 'mailto:t@constantx.com',
+  },
+];
+---
+
+<div class='py-4'>
+  <div>Connect with me:
+    <ul class="inline">
+      {social.map((item, index) => (
+        <li class="inline-block mr-2">
+          <a 
+            href={item.href}
+            class="underline" 
+            target="_blank" 
+            title={item.title}
+          >{item.title}</a>{index < social.length - 1 ? ',' : '.'}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div> 
+
+<style>
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+</style>

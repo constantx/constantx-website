@@ -1,0 +1,35 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  
+  
+  --color-meta: #ccd1d1;
+  --color-border: #e7e9e9;
+  
+  /* brand colors */
+  --color-cream: #f9f9f9;
+  --color-cool: #4bb4d9;
+  --color-chocolate: #404041;
+
+  /* colors tokens */
+  --color-primary: #f25e5c;
+  --color-primary-foreground: #404041;
+  --color-secondary: #4bb4d9;
+  --color-secondary-foreground: #fff;
+  --color-destructive: #f25e5c;
+  --color-destructive-foreground: #fff;
+  --color-muted: #ccd1d1;
+  --color-muted-foreground: #fff;
+  --color-accent: #4bb4d9;
+  --color-accent-foreground: #fff;
+  --color-cool: #4bb4d9;
+  --color-cool-foreground: #fff;
+  
+
+  /* Font Families */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'JetBrains Mono', monospace;
+  --font-heading: var(--font-sans);
+  --font-copy: var(--font-mono);
+  --font-meta: var(--font-mono);
+}

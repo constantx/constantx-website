@@ -1,0 +1,11 @@
+---
+interface Props {
+	tagline?: string;
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<header class={`relative z-10 p-4 ${className}`}>
+	<slot />
+</header>

@@ -1,0 +1,19 @@
+---
+const currentYear = new Date().getFullYear();
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<footer class="py-16">
+  &copy; {currentYear} {title}
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+  }  
+</style>
