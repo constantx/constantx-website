@@ -1,0 +1,34 @@
+---
+import moment from 'moment';
+import { type CollectionEntry } from 'astro:content';
+
+type BlogPost = CollectionEntry<'posts'>;
+
+interface Props {
+  posts: BlogPost[];
+}
+
+const { posts } = Astro.props;
+---
+{ 
+  posts.length > 0 && (
+    <section class="space-y-8">
+      <h2 class="text-2xl font-bold mb-6">Recent Writings</h2>
+      <ul class="list-disc list-inside">
+        {posts.map(post => {
+          const formattedDate = moment(post.data.pubDate).format('YYYY-MM-DD');
+          return (
+            <li class="">
+              <a 
+                href={`/posts/${post.id}/`}
+                class="block hover:text-gray-300 hover:underline transition-colors"
+              >
+                {post.data.title}<span class="text-gray-400 text-sm ml-2">({formattedDate})</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )
+}

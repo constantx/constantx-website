@@ -1,0 +1,8 @@
+# Tech Stack
+
+- [Astro](https://astro.build)
+- Tailwind CSS
+- TypeScript
+- React
+- Node.js
+- Deploy via GitHub Actions to Github Pages

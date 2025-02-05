@@ -1,0 +1,40 @@
+---
+import '@fontsource/jetbrains-mono';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/700.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  isHomepage?: boolean;
+}
+
+const { title, description } = Astro.props;
+const siteDescription = "Designer & Hacker"; // Add your site description
+---
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, initial-scale=1">
+    
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta name="description" content={description || siteDescription}>
+    <meta property="og:description" content={description || siteDescription}>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  
+  <body class='min-h-screen'>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <slot />
+  </body>
+</html> 
