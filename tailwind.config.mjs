@@ -22,41 +22,24 @@ export default {
         '4xl': '1920px',
       },
       colors: {
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-
         cream: {
           DEFAULT: 'hsl(var(--brand-cream))',
-          foreground: 'hsl(var(--brand-midnight))',
+          foreground: 'hsl(var(--brand-cream-foreground))',
         },
-        midnight: {
-          DEFAULT: 'hsl(var(--brand-midnight))',
-          foreground: 'hsl(var(--brand-cream))',
+        dark: {
+          DEFAULT: 'hsl(var(--brand-chocolate))',
+          foreground: 'hsl(var(--brand-chocolate-foreground))',
         },
         cool: {
           DEFAULT: 'hsl(var(--brand-cool))',
-          foreground: 'hsl(var(--brand-midnight))',
+          foreground: 'hsl(var(--brand-cool-foreground))',
+        },
+        hot: {
+          DEFAULT: 'hsl(var(--brand-hot))',
+          foreground: 'hsl(var(--brand-hot-foreground))',
         },
       },
     },
   },
   plugins: [],
-} 
+}

@@ -1,35 +1,28 @@
 /* CSS Variables */
 :root {
-  /* Colors */
-  
-  
-  --color-meta: #ccd1d1;
-  --color-border: #e7e9e9;
-  
   /* brand colors */
-  --color-cream: #f9f9f9;
-  --color-cool: #4bb4d9;
-  --color-chocolate: #404041;
-
+  --brand-cream: 0 0% 98%; /* #f9f9f9 */
+  --brand-cream-foreground: 240 1% 25%; /* #404041 */
+  --brand-cool: 197 65% 57%; /* #4bb4d9 */
+  --brand-cool-foreground: 0 0% 100%; /* #fff */
+  --brand-chocolate: 240 1% 25%; /* #404041 */
+  --brand-chocolate-foreground: 0 0% 100%; /* #fff */
+  --brand-hot: 1 86% 65%; /* #f25e5c */
+  --brand-hot-foreground: 0 0% 100%; /* #fff */
+  
   /* colors tokens */
-  --color-primary: #f25e5c;
-  --color-primary-foreground: #404041;
-  --color-secondary: #4bb4d9;
+  /* 
+  --color-primary: var(--brand-hot);
+  --color-primary-foreground: var(--brand-chocolate);
+  --color-secondary: var(--brand-cool);
   --color-secondary-foreground: #fff;
-  --color-destructive: #f25e5c;
+  --color-destructive: var(--brand-hot);
   --color-destructive-foreground: #fff;
-  --color-muted: #ccd1d1;
+  --color-muted: var(--color-meta);
   --color-muted-foreground: #fff;
   --color-accent: #4bb4d9;
   --color-accent-foreground: #fff;
-  --color-cool: #4bb4d9;
-  --color-cool-foreground: #fff;
-  
-
-  /* Font Families */
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'JetBrains Mono', monospace;
-  --font-heading: var(--font-sans);
-  --font-copy: var(--font-mono);
-  --font-meta: var(--font-mono);
+  --color-meta: #ccd1d1;
+  --color-border: #e7e9e9;
+  */
 }
