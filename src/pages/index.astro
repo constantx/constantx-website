@@ -29,7 +29,7 @@ const {
 ---
 
 <Layout title={title}>
-  <Header class="p-8">
+  <Header class="p-6 lg:p-12">
     {title && (
       <h1 class="text-5xl md:text-7xl xl:text-9xl pt-16 lg:pt-32 text-white"
         set:html={title}
@@ -42,7 +42,7 @@ const {
     )}
   </Header>
 
-  <main class="relative container p-8 z-10 flex flex-wrap gap-8 text-white">
+  <main class="relative container p-6 lg:p-12 z-10 flex flex-wrap gap-6 lg:gap-12 text-white">
     <div class="max-w-screen-sm prose">
       <Content />
       <Social />
@@ -52,7 +52,7 @@ const {
     </div>
   </main>
   
-  <Footer title={title} />
+  <Footer title={title} class="p-6 lg:p-12" />
 </Layout>
 
 <style>

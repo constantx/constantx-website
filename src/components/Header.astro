@@ -6,6 +6,6 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<header class={`relative z-10 p-4 ${className}`}>
+<header class:list={`relative ${className}`}>
 	<slot />
 </header>

@@ -3,12 +3,13 @@ const currentYear = new Date().getFullYear();
 
 type Props = {
   title: string;
+  class: string;
 };
 
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<footer class="py-16">
+<footer class:list={`${className}`}>
   &copy; {currentYear} {title}
 </footer>
 
