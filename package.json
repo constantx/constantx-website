@@ -2,6 +2,9 @@
   "name": "constantx-com",
   "version": "3.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.16.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
