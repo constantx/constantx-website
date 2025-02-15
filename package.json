@@ -2,6 +2,7 @@
   "name": "constantx-com",
   "version": "3.0.0",
   "type": "module",
+  "license": "MIT",
   "engines": {
     "node": ">=20.0.0"
   },
