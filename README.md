@@ -1,68 +1,122 @@
-# Astro Starter Kit: Blog
+# ConstantX Website
 
-```sh
-npm create astro@latest -- --template blog
-```
+A modern, fast website built with Astro and deployed to GitHub Pages.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 🛠️ Tech Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **[Astro](https://astro.build)** - Static site generator with modern web features
+- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org)** - Type-safe JavaScript
+- **[React](https://react.dev)** - UI components library
+- **[MDX](https://mdxjs.com)** - Markdown with React components
+- **[Node.js](https://nodejs.org)** - Runtime environment
+- **GitHub Actions** - CI/CD for deployment to GitHub Pages
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## ✨ Features
 
-Features:
-
-- ✅ Minimal styling (make it your own!)
+- ✅ Modern, responsive design with Tailwind CSS
 - ✅ 100/100 Lighthouse performance
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Sitemap support
 - ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- ✅ Markdown & MDX support with React components
+- ✅ TypeScript for type safety
+- ✅ ESLint for code quality
+- ✅ Automated deployment to GitHub Pages
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project Structure
 
 ```text
-├── public/
+constantx-website/
+├── public/                 # Static assets
+│   ├── fonts/             # Font files
+│   ├── images/            # Image assets
+│   ├── favicon.svg        # Site favicon
+│   └── CNAME              # GitHub Pages domain config
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── components/        # Reusable UI components
+│   ├── content/           # Content collections
+│   │   ├── pages/         # Page content
+│   │   └── posts/         # Blog posts
+│   ├── layouts/           # Page layouts
+│   ├── lib/               # Utility functions
+│   ├── pages/             # Route pages
+│   │   └── posts/         # Blog post pages
+│   ├── styles/            # Global styles
+│   ├── content.config.ts  # Content collection schemas
+│   └── consts.ts          # Site constants
+├── astro.config.mjs       # Astro configuration
+├── package.json           # Dependencies and scripts
+├── tsconfig.json          # TypeScript configuration
+├── eslint.config.js       # ESLint configuration
+├── components.json        # UI components config
+└── README.md              # This file
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerequisites
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+- Node.js 20.0.0 or higher
+- Yarn or npm
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```sh
+   yarn install
+   # or
+   npm install
+   ```
+
+### Development
+
+Start the development server:
+
+```sh
+yarn dev
+# or
+npm run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+### Building
+
+Build the production site:
+
+```sh
+yarn build
+# or
+npm run build
+```
+
+### Preview
+
+Preview the production build locally:
+
+```sh
+yarn preview
+# or
+npm run preview
+```
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command        | Action                                           |
+| :------------- | :----------------------------------------------- |
+| `yarn install` | Installs dependencies                            |
+| `yarn dev`     | Starts local dev server at `localhost:4321`     |
+| `yarn build`   | Build your production site to `./dist/`         |
+| `yarn preview` | Preview your build locally, before deploying    |
 
-## 👀 Want to learn more?
+## 🚀 Deployment
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the main branch.
 
-## Credit
+## 📄 License
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This project is licensed under the MIT License.

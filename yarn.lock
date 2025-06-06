@@ -491,10 +491,15 @@
     "@eslint/core" "^0.10.0"
     levn "^0.4.1"
 
-"@fontsource/jetbrains-mono@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-5.1.2.tgz#dcd74209b9aa5ba9f21eafaba09c8dd758333cde"
-  integrity sha512-muYZK6W3NTrKpKTjoF2dkrtMjXLlPZhniLiLjMmfegRibl2L6jUJh9gB6UcbcZs3zHdIYTmzMkXNbNoI2kXX3Q==
+"@fontsource/ibm-plex-mono@^5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.2.5.tgz#7e1f51b827fa97347d27fd8c30e7c78e89c1dcfd"
+  integrity sha512-G09N3GfuT9qj3Ax2FDZvKqZttzM3v+cco2l8uXamhKyXLdmlaUDH5o88/C3vtTHj2oT7yRKsvxz9F+BXbWKMYA==
+
+"@fontsource/ibm-plex-sans@^5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-5.2.5.tgz#cbcc64322885d2918a5b7b88778a97062bfd0aeb"
+  integrity sha512-W1kkC/fpDuoKQ5pNSQt/Bg0rpV9AATreA9ABwZf678AlwSCY2TQBT1YwAxxB65E9jcT/ysDrU1sGVNUyWCBXRw==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"

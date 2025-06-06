@@ -1,4 +1,10 @@
 ---
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+
 const social = [
   {
     type: 'linkedin',
@@ -14,42 +20,30 @@ const social = [
     type: 'dribbble',
     title: 'Dribbble', 
     href: 'https://dribbble.com/constantx',
-  },
-  {
-    type: 'angellist', 
-    title: 'AngelList',
-    href: 'https://angel.co/constantx',
-  },
-  {
-    type: 'email',
-    title: 'or email me',
-    href: 'mailto:t@constantx.com',
-  },
+  }
 ];
 ---
 
-<div class='py-4'>
-  <div>Connect with me:
-    <ul class="inline">
-      {social.map((item, index) => (
-        <li class="inline-block mr-2">
-          <a 
-            href={item.href}
-            class="underline" 
-            target="_blank" 
-            title={item.title}
-          >{item.title}</a>{index < social.length - 1 ? ',' : '.'}
-        </li>
-      ))}
-    </ul>
-  </div>
+<div class:list={[className]}>
+  <ul class="inline">
+    {social.map((item) => (
+      <li class="inline-block mr-2">
+        <a 
+          href={item.href}
+          class="underline uppercase tracking-widest text-xs" 
+          target="_blank" 
+          title={item.title}
+        >{item.title}</a>
+      </li>
+    ))}
+  </ul>
 </div> 
 
 <style>
-a {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 </style>

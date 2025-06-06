@@ -1,19 +1,17 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: 'JetBrains Mono', 'monaco';
-  --font-mono: 'JetBrains Mono', 'monaco';
-  --font-serif: 'JetBrains Mono', 'monaco';
-
-  /* brand colors */
-  --color-cream: hsl(0 0% 98%); /* #f9f9f9 */
-  --color-cream-foreground: hsl(240 1% 25%); /* #404041 */
-  --color-cool: hsl(197 65% 57%); /* #4bb4d9 */
-  --color-cool-foreground: hsl(0 0% 100%); /* #fff */
-  --color-chocolate: hsl(240 1% 25%); /* #404041 */
-  --color-chocolate-foreground: hsl(0 0% 100%); /* #fff */
-  --color-accent: hsl(1 86% 65%); /* #f25e5c */
-  --color-accent-foreground: hsl(0 0% 100%); /* #fff */
+@theme inline {
+  --font-sans: 'IBM Plex Sans', 'Geist Sans', 'Inter', 'sans-serif';
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'monaco', 'monospace';
+  
+  --color-cream: hsl(0 0% 98%);
+  --color-cream-foreground: hsl(240 1% 25%);
+  --color-cool: hsl(197 65% 57%);
+  --color-cool-foreground: hsl(0 0% 100%);
+  --color-chocolate: hsl(240 1% 25%);
+  --color-chocolate-foreground: hsl(0 0% 100%);
+  --color-accent: hsl(1 86% 65%);
+  --color-accent-foreground: hsl(0 0% 100%);
 
   /* max width */
   --w-xs: 420px;
