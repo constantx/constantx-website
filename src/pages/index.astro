@@ -49,19 +49,19 @@ const containerClasses = 'grid md:gap-6 grid-cols-6 lg:gap-12 text-cream';
     </Header>
     
     <main class:list={[containerClasses, 'mt-6 md:mt-12 flex-1']}>
-      <div class="prose text-pretty max-w-prose lg:text-lg col-start-2 col-span-6 md:col-start-4 md:col-span-3 lg:col-start-2 lg:col-span-3">
+      <div class="prose text-pretty max-w-prose lg:text-lg col-start-2 col-span-6 md:col-start-4 md:col-span-3 lg:col-start-2 lg:col-span-2">
         <Content />
       </div>
 
 
       { posts.length > 0 && (
-        <HighlightBlock class="md:col-span-2 lg:col-span-1 whitespace-nowrap">
-          <h2 class="inline-block font-bold mb-6 uppercase tracking-widest text-gray-900">
+        <HighlightBlock class="whitespace-nowrap md:col-span-2 lg:col-span-1">
+          <h2 class="inline-block font-bold mb-6 uppercase tracking-widest text-accent">
             Recent Thoughts
           </h2>
         </HighlightBlock>
       )}
-      <div class="col-span-1 md:col-span-3">
+      <div class="col-span-1 md:col-span-2 mt-6 lg:mt-12 lg:-ml-12">
         <RecentPosts posts={posts} />
       </div>
     </main>
