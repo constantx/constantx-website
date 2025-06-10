@@ -22,4 +22,7 @@
   --w-2xl: 1536px;
   --w-3xl: 1680px;
   --w-4xl: 1920px;
+
+  --color-background: hsl(240 1% 5%);
+  --color-foreground: hsl(0 0% 98%);
 }

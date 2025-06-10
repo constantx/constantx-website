@@ -71,24 +71,25 @@ const containerClasses = 'grid md:gap-6 grid-cols-6 lg:gap-12 text-cream';
 </Layout>
 
 <style>
-  :root {
+  body {
+    background: var(--color-background);
+  }
+  
+/*   :root {
     --overlay-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 1) 100%);
   }
-
   body {
     background: 
       var(--overlay-gradient),
       url('/images/cover.jpg') top center / cover no-repeat;
   }
-
-  /* For high-DPI displays */
   @media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
     body {
       background: 
         var(--overlay-gradient),
         url('/images/cover@2x.jpg') top center / cover no-repeat;
     }
-  }
+  } */
   
   /* Keep the wander animation in CSS since it's complex to do in Tailwind */
 	body::after {
