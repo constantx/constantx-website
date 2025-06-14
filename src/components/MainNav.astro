@@ -1,0 +1,29 @@
+---
+import Cell from '@/components/Cell.astro';
+import GridContainer from '@/components/GridContainer.astro';
+
+type Props = {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const links = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+];
+---
+<nav class:list={[className]}>
+  <GridContainer>
+    <Cell class="col-span-full xl:col-[2_/_6]" border={false}>
+      <ul class="flex gap-4">
+        {links.map((link) => (
+          <li class="text-sm uppercase tracking-widest">
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </Cell>
+  </GridContainer>
+</nav>

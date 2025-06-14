@@ -25,12 +25,12 @@ const social = [
 ---
 
 <div class:list={[className]}>
-  <ul class="inline">
+  <ul class="inline-block whitespace-nowrap">
     {social.map((item) => (
-      <li class="inline-block mr-2">
+      <li class="inline-block mr-2 whitespace-nowrap">
         <a 
           href={item.href}
-          class="underline uppercase tracking-widest text-xs" 
+          class="underline uppercase tracking-widest" 
           target="_blank" 
           title={item.title}
         >{item.title}</a>

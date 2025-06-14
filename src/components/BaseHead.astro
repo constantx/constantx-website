@@ -19,10 +19,10 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { 
-	title, 
-	description, 
-	image = '/blog-placeholder-1.jpg' 
-	} = Astro.props;
+  title, 
+  description, 
+  image = '/blog-placeholder-1.jpg' 
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -32,10 +32,10 @@ const {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 

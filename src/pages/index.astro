@@ -1,20 +1,20 @@
 ---
-import { render } from 'astro:content';
-import { getCollection, getEntry} from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
+import Cell from '@/components/Cell.astro';
+import GridContainer from '@/components/GridContainer.astro';
+import MainFooter from '@/components/MainFooter.astro';
+import MainHeader from '@/components/MainHeader.astro';
+import RecentThoughts from '@/components/RecentThoughts.astro';
 import Layout from '@/layouts/MainLayout.astro';
-import RecentPosts from '@/components/RecentPosts.astro';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
-import HighlightBlock from '@/components/HighlightBlock.astro';
 
 type Props = CollectionEntry<'pages'>;
-type BlogPost = CollectionEntry<'posts'>;
+type BlogPost = CollectionEntry<'thoughts'>;
 
-const posts = (await getCollection('posts') as unknown as BlogPost[])
+const thoughts = (await getCollection('thoughts') as unknown as BlogPost[])
   .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 
 const page = await getEntry('pages', 'home');
 if (!page) {
@@ -26,55 +26,53 @@ const {
   title,
   tagline,
 } = page.data as Props['data'];
-
-const containerClasses = 'grid md:gap-6 grid-cols-6 lg:gap-12 text-cream';
 ---
-
 <Layout title={title}>
   <div class="min-h-screen flex flex-col">
-    <Header class:list={containerClasses}>
-      {title && (
-        <h1 class="col-span-6 lg:col-span-4 pt-6 pl-6 text-5xl font-bold md:text-7xl lg:text-9xl mb-6 lg:mb-0"
-          set:html={title}
-        />
-      )}
-      {tagline && (
-        <HighlightBlock class="col-start-2 col-span-5 lg:col-span-2">
-          <h2 
-            class="text-xl lg:text-3xl md:justify-self-end text-accent"
-            set:html={tagline}
-          />
-        </HighlightBlock>
-      )}
-    </Header>
-    
-    <main class:list={[containerClasses, 'mt-6 md:mt-12 flex-1']}>
-      <div class="prose text-pretty max-w-prose lg:text-lg col-start-2 col-span-6 md:col-start-4 md:col-span-3 lg:col-start-2 lg:col-span-2">
-        <Content />
-      </div>
+    <MainHeader>
+      <GridContainer>
+        <Cell class="whitespace-nowrap col-span-2 xl:col-[1_/_span_1]">
+          {title && (
+            <h1 class="lg:text-xl font-bold"
+              set:html={title}
+            />
+          )}
+        </Cell>
+        <Cell class="whitespace-nowrap col-span-2">
+          {tagline && (
+            <h2 
+              class="lg:text-lg"
+              set:html={tagline}
+            />
+          )}
+        </Cell>
+      </GridContainer>
+    </MainHeader>
+  
+    <main class="flex-1">
+      <GridContainer>
+        <Cell class="col-span-full md:col-span-4 xl:col-[2_/_span_2]">
+          <div class="prose text-pretty lg:text-lg">
+            <Content />
+          </div>
+        </Cell>
 
-
-      { posts.length > 0 && (
-        <HighlightBlock class="whitespace-nowrap md:col-span-2 lg:col-span-1">
-          <h2 class="inline-block font-bold mb-6 uppercase tracking-widest text-accent">
-            Recent Thoughts
-          </h2>
-        </HighlightBlock>
-      )}
-      <div class="col-span-1 md:col-span-2 mt-6 lg:mt-12 lg:-ml-12">
-        <RecentPosts posts={posts} />
-      </div>
+        { thoughts.length > 0 && (
+          <Cell class="col-span-full md:col-span-2 xl:col-[4/7]">
+            <h2 class="font-bold uppercase tracking-widest mb-4">
+              Recent
+            </h2>
+            <RecentThoughts thoughts={thoughts} />
+          </Cell>
+        )}
+      </GridContainer>
     </main>
-    
-    <Footer title={title} class:list={['mt-6 lg:mt-12']}/>
+  
+    <MainFooter title="T. Nguyen" class:list={['border-t border-border']}/>
   </div>
 </Layout>
 
 <style>
-  body {
-    background: var(--color-background);
-  }
-  
 /*   :root {
     --overlay-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 1) 100%);
   }
@@ -101,7 +99,7 @@ const containerClasses = 'grid md:gap-6 grid-cols-6 lg:gap-12 text-cream';
 		display: block;
 		width: 100%;
 		height: 1px;
-		background: var(--color-accent);
+		background: var(--color-brand);
 		animation: wander 60s linear infinite;
     z-index: 9999;
 	}

@@ -5,10 +5,11 @@ interface Props {
   title: string;
   description?: string;
   isHomepage?: boolean;
+  class?: string[];
 }
 
-const { title, description } = Astro.props;
-const siteDescription = "Designer & Hacker"; // Add your site description
+const { title, description, class: classList } = Astro.props;
+const siteDescription = "constantx"; // Add your site description
 ---
 
 <!DOCTYPE html>
@@ -17,7 +18,15 @@ const siteDescription = "Designer & Hacker"; // Add your site description
     <BaseHead title={title} description={description || siteDescription} />
   </head>
   
-  <body class='min-h-screen'>
+  <body class:list={['min-h-screen', classList]}>
     <slot />
   </body>
 </html> 
+
+<style>
+  @reference "../styles/global.css";
+
+  body {
+    background: var(--color-background);
+  }
+</style>

@@ -1,0 +1,311 @@
+---
+import MainHeader from '@/components/MainHeader.astro';
+import MainNav from '@/components/MainNav.astro';
+import MainLayout from '@/layouts/MainLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  heroImage?: string;
+  topics?: string[];
+  draft?: boolean;
+}
+
+const { 
+  title, 
+  description,
+} = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+  <MainHeader>
+    <MainNav />
+  </MainHeader>
+  <article class="prose">
+    <slot />
+  </article>
+</MainLayout>
+
+<style>
+  @reference "../styles/global.css";
+  
+  .prose {
+    @apply text-foreground p-6 lg:p-0;
+    line-height: 1.7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns produce 7 grid lines (1–7) */
+    gap: 1rem;
+  }
+
+  .prose :global(.post-title) {
+    @apply col-span-full lg:col-[2_/_-1]; 
+    @apply pt-96 pb-72;
+    @apply font-bold text-7xl md:text-8xl;
+    @apply text-balance;
+  }
+
+  /* Text elements – occupy columns 2–4 (from grid line 2 to 5) */
+  .prose :global(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote) {
+    @apply col-span-full sm:col-[2_/_7] md:col-[3_/_7] lg:col-[3_/_7] xl:col-[3_/_6];
+    @apply p-6 lg:p-0;
+  }
+
+  .prose :global(p, ul, ol) {
+    @apply md:text-lg;
+    @apply max-w-prose;
+  }
+
+  /* Full-width elements - start at col 1, span to end */
+  .prose :global(img, table, hr) {
+    @apply col-span-full;
+  }
+
+  .prose :global(pre, table, hr) {
+    @apply col-span-full md:col-[1_/_7] lg:col-[2_/_7] xl:col-[2_/_6];
+  }
+
+  /* Special layout classes for markdown */
+  .prose :global(.col-full) {
+    @apply col-span-full;
+  }
+
+  .prose :global(.col-wide) {
+    @apply col-span-full md:col-[2_/_span_5];
+  }
+  
+  .prose :global(.col-left) {
+    grid-column: 1 / span 1;
+  }
+
+  .prose :global(.col-right) {
+    grid-column: span 1 / 6;
+  }
+
+  .prose :global(.col-left-sidebar) {
+    /* Starts at grid line 1 and spans 2 columns (i.e. grid lines 1 to 3) */
+    grid-column: 1 / span 2;
+  }
+
+  .prose :global(.col-right-sidebar) {
+    grid-column: span 2 / 6;
+  }
+
+  /* Headings */
+  .prose :global(h1) {
+    @apply text-4xl md:text-5xl mb-4 mt-8;
+    line-height: 1.2;
+  }
+
+  .prose :global(h2) {
+    @apply text-3xl md:text-4xl mb-4 mt-8;
+    @apply text-foreground;
+    @apply border-b border-border pb-2;
+    @apply font-bold;
+  }
+
+  .prose :global(h3) {
+    @apply text-2xl md:text-3xl mb-3 mt-6;
+    @apply text-foreground;
+  }
+
+  .prose :global(h4) {
+    @apply text-xl md:text-2xl mb-3 mt-6;
+    @apply text-foreground;
+  }
+
+  .prose :global(h5) {
+    @apply text-lg md:text-xl mb-2 mt-4;
+    @apply text-foreground;
+  }
+
+  .prose :global(h6) {
+    @apply text-base mb-2 mt-4;
+    @apply text-muted-foreground;
+  }
+
+  /* Paragraphs */
+  .prose :global(p) {
+    @apply mb-4;
+    @apply text-foreground;
+  }
+
+  /* Text formatting */
+  .prose :global(em) {
+    @apply italic;
+    @apply text-foreground;
+  }
+
+  .prose :global(strong) {
+    @apply font-semibold;
+    @apply text-foreground;
+  }
+
+  .prose :global(mark) {
+    @apply bg-warning text-warning-foreground px-1 rounded;
+  }
+
+  .prose :global(sub) {
+    @apply text-xs;
+    vertical-align: sub;
+  }
+
+  .prose :global(sup) {
+    @apply text-xs;
+    @apply ml-1;
+    a {
+      @apply no-underline;
+    }
+  }
+
+  /* Links */
+  .prose :global(a) {
+    @apply text-brand underline decoration-brand;
+    @apply underline-offset-4;
+    @apply hover:decoration-brand transition-colors;
+  }
+
+  /* Images */
+  .prose :global(img) {
+    @apply rounded-lg shadow-sm my-6;
+    @apply border border-border;
+    max-width: 100%;
+    height: auto;
+    justify-self: center;
+  }
+
+  /* Blockquotes */
+  .prose :global(blockquote) {
+    @apply border-l-4 border-brand pl-6 py-2 my-6;
+    @apply bg-muted/50 rounded-r-lg;
+    @apply italic text-muted-foreground;
+  }
+
+  .prose :global(blockquote p) {
+    @apply mb-2 last:mb-0;
+  }
+
+  .prose :global(blockquote cite) {
+    @apply not-italic font-medium text-foreground;
+  }
+
+  /* Code */
+  .prose :global(code) {
+    @apply bg-muted text-foreground px-1.5 py-0.5 rounded text-sm;
+    @apply font-mono;
+  }
+
+  /* Code blocks */
+  .prose :global(pre) {
+    @apply bg-muted border border-border rounded-lg p-4 my-6;
+    @apply overflow-x-auto;
+    @apply text-sm;
+  }
+
+  .prose :global(pre code) {
+    @apply bg-transparent p-0 text-foreground;
+  }
+
+  /* Keyboard input */
+  .prose :global(kbd) {
+    @apply bg-secondary text-secondary-foreground;
+    @apply px-2 py-1 rounded text-xs md:text-sm font-mono uppercase tracking-wider;
+    @apply border border-border shadow-sm;
+  }
+
+  /* Lists */
+  .prose :global(ul) {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+
+  .prose :global(ol) {
+    @apply list-decimal pl-6 mb-4 space-y-1;
+  }
+
+  .prose :global(ul ul),
+  .prose :global(ol ol),
+  .prose :global(ul ol),
+  .prose :global(ol ul) {
+    @apply mt-1 mb-0;
+  }
+
+  /* Tables */
+  .prose :global(table) {
+    @apply w-full border-collapse my-6;
+    @apply border border-border rounded-lg overflow-hidden;
+  }
+
+  .prose :global(th) {
+    @apply bg-muted text-foreground font-semibold;
+    @apply px-4 py-3 text-left border-b border-border;
+  }
+
+  .prose :global(td) {
+    @apply px-4 py-3 border-b border-border;
+    @apply text-foreground;
+  }
+
+  .prose :global(tr:last-child td) {
+    @apply border-b-0;
+  }
+
+  .prose :global(tr:nth-child(even)) {
+    @apply bg-muted/30;
+  }
+
+  /* Horizontal rules */
+  .prose :global(hr) {
+    @apply border-0 border-t border-border my-8;
+  }
+
+  /* Abbreviations */
+  .prose :global(abbr) {
+    @apply underline decoration-dotted cursor-help;
+    @apply text-foreground;
+  }
+
+  /* Footnotes */
+  .prose :global(.footnotes) {
+    @apply col-span-full md:col-[1_/_span_4];
+    @apply mt-48 pt-6 border-t border-border;
+  }
+
+  .prose :global(.footnotes p, .footnotes ol, .footnotes ul) {
+    @apply max-w-full;
+    @apply text-sm text-muted-foreground;
+  }
+
+  .prose :global(.footnotes p) {
+    @apply mb-0;
+  }
+
+  .prose :global(.footnotes a) {
+    @apply text-muted-foreground decoration-muted-foreground;
+  }
+
+  .prose :global(.footnote-ref) {
+    @apply text-brand no-underline;
+    @apply hover:underline;
+  }
+
+  /* First paragraph after headings */
+  .prose :global(h1 + p),
+  .prose :global(h2 + p),
+  .prose :global(h3 + p),
+  .prose :global(h4 + p),
+  .prose :global(h5 + p),
+  .prose :global(h6 + p) {
+    @apply mt-0;
+  }
+
+  /* Code syntax highlighting adjustments */
+  .prose :global(.astro-code) {
+    @apply bg-muted border border-border rounded-lg;
+    @apply text-sm;
+  }
+
+  .prose :global(.astro-code code) {
+    @apply bg-transparent;
+  }
+</style>

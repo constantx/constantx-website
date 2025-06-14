@@ -37,11 +37,11 @@ constantx-website/
 │   ├── components/        # Reusable UI components
 │   ├── content/           # Content collections
 │   │   ├── pages/         # Page content
-│   │   └── posts/         # Blog posts
+│   │   └── thoughts/         # thoughts journal entry
 │   ├── layouts/           # Page layouts
 │   ├── lib/               # Utility functions
 │   ├── pages/             # Route pages
-│   │   └── posts/         # Blog post pages
+│   │   └── thoughts/         # Blog post pages
 │   ├── styles/            # Global styles
 │   ├── content.config.ts  # Content collection schemas
 │   └── consts.ts          # Site constants

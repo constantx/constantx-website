@@ -1,0 +1,23 @@
+---
+type Props = {
+  class?: string;
+  border?: boolean;
+};
+
+const { 
+  class: className = '', 
+  border = true,
+} = Astro.props;
+
+// Generate the appropriate class based on colSpan value
+let spanClass = '';
+
+---
+
+<div class:list={[
+  'relative p-4 lg:p-6',
+  spanClass,
+  className
+]} style={border ? 'box-shadow: 0 0 0 0.5px var(--color-border);' : ''}>
+  <slot />
+</div>

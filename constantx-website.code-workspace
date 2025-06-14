@@ -8,6 +8,65 @@
 		"files.exclude": {
 			"**/node_modules": true
 		},
-		"editor.tabSize": 2
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false,
+		"editor.autoIndent": "full",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		},
+		"editor.formatOnSave": false,
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"astro"
+		],
+		"eslint.format.enable": true,
+		"[astro]": {
+			"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[javascriptreact]": {
+			"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"eslint.config.js": {
+			"editor.defaultFormatter": null,
+			"editor.formatOnSave": false,
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"astro-build.astro-vscode",
+			"dbaeumer.vscode-eslint",
+			"bradlc.vscode-tailwindcss"
+		]
 	}
 }

@@ -1,0 +1,25 @@
+---
+import Cell from '@/components/Cell.astro';
+import GridContainer from '@/components/GridContainer.astro';
+import Social from '@/components/Social.astro';
+
+const currentYear = new Date().getFullYear();
+
+type Props = {
+  title: string;
+  class?: string;
+};
+
+const { title, class: className } = Astro.props;
+---
+
+<footer class:list={['uppercase tracking-widest text-tiny md:text-xs font-mono', className]}>
+  <GridContainer>
+    <Cell class="md:text-right col-span-3 md:col-span-2 lg:col-[1_/_span_1]">
+      &copy; {`${currentYear} ${title}`}
+    </Cell>
+    <Cell class="col-span-3 lg:col-[2_/_span_2]">
+      <Social />
+    </Cell>
+  </GridContainer>
+</footer>
