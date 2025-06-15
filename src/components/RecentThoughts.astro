@@ -1,4 +1,5 @@
 ---
+import Hightlight from '@/components/Hightlight.astro';
 import { type CollectionEntry } from 'astro:content';
 import moment from 'moment';
 
@@ -13,6 +14,9 @@ const { thoughts } = Astro.props;
 { 
   thoughts.length > 0 && (
     <section class="space-y-8">
+      <h2 class="font-bold uppercase tracking-widest mb-4 text-sm sm:text-base lg:text-lg xl:text-xl">
+        Journal
+      </h2>
       <ul class="list-disc list-inside">
         {thoughts.map(post => {
           const formattedDate = moment(post.data.publishedAt).format('YYYY-MM-DD');
@@ -20,10 +24,12 @@ const { thoughts } = Astro.props;
             <li class="list-none flex items-center">
               <a 
                 href={`/thoughts/${post.id}/`}
-                class="group inline-block bg-primary text-primary-foreground px-2 py-1 hover:bg-brand hover:text-brand-foreground transform-gpu hover:-translate-x-4 hover:-translate-y-1 transition duration-300"
+                class="group inline-block text-sm sm:text-base lg:text-lg xl:text-xl hover:-translate-y-1 hover:-translate-x-2 transition duration-300"
               >
-                <span class="text-secondary/50 group-hover:text-brand-foreground text-xs mr-2 font-mono">{formattedDate}</span>
-                <span>{post.data.title}</span>
+                <Hightlight class="mr-2">
+                  <span>{post.data.title}</span>
+                </Hightlight>
+                <span class="text-foreground font-mono">{formattedDate}</span>
               </a>
             </li>
           );

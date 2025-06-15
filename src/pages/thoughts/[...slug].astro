@@ -16,6 +16,13 @@ const { Content } = await render(post);
 ---
 
 <Layout {...post.data}>
-  <h1 class="post-title">{post.data.title}</h1>
+  <div class="hero">
+    <div class="text-sm text-muted-foreground px-4 sm:p-0">
+      {post.data.publishedAt.toLocaleDateString()}
+    </div>
+    <h1 class="text-balance leading-snug font-bold text-4xl md:text-7xl lg:text-8xl">
+      {post.data.title}
+    </h1>
+  </div>
   <Content />
 </Layout>

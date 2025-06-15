@@ -1,6 +1,7 @@
 ---
 import Cell from '@/components/Cell.astro';
 import GridContainer from '@/components/GridContainer.astro';
+import { SITE_TITLE } from '@/consts';
 
 type Props = {
   class?: string;
@@ -9,7 +10,7 @@ type Props = {
 const { class: className } = Astro.props;
 const links = [
   {
-    label: 'Home',
+    label: SITE_TITLE,
     href: '/',
   },
 ];
@@ -19,7 +20,7 @@ const links = [
     <Cell class="col-span-full xl:col-[2_/_6]" border={false}>
       <ul class="flex gap-4">
         {links.map((link) => (
-          <li class="text-sm uppercase tracking-widest">
+          <li class="">
             <a href={link.href}>{link.label}</a>
           </li>
         ))}

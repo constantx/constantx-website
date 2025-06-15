@@ -1,0 +1,10 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<span class:list={['inline-block bg-primary text-primary-foreground px-2 py-1 hover:bg-brand hover:text-brand-foreground group-hover:bg-brand group-hover:text-brand-foreground transform-gpu transition duration-300', className]}>
+  <slot />
+</span>

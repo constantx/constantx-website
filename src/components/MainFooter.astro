@@ -13,7 +13,7 @@ type Props = {
 const { title, class: className } = Astro.props;
 ---
 
-<footer class:list={['uppercase tracking-widest text-tiny md:text-xs font-mono', className]}>
+<footer class:list={['mt-16 uppercase tracking-widest text-tiny md:text-xs font-mono', className]}>
   <GridContainer>
     <Cell class="md:text-right col-span-3 md:col-span-2 lg:col-[1_/_span_1]">
       &copy; {`${currentYear} ${title}`}

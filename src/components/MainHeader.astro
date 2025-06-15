@@ -1,11 +1,30 @@
 ---
+import Cell from '@/components/Cell.astro';
+import GridContainer from '@/components/GridContainer.astro';
+
 interface Props {
-	tagline?: string;
+	title: string;
+	description?: string;
 	class?: string;
 }
-const { class: className } = Astro.props;
+const { title, description, class: className } = Astro.props;
 ---
 
 <header class:list={`relative ${className}`}>
+  <GridContainer>
+    <Cell class="whitespace-nowrap col-span-2 lg:col-span-1 xl:col-[1_/_span_1]">
+      <h1 class="text-sm sm:text-base lg:text-lg xl:text-xl font-bold"
+        set:html={title}
+      />
+    </Cell>
+    <Cell class="whitespace-nowrap col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-3">
+      {description && (
+        <h2 
+          class="text-sm sm:text-base lg:text-lg xl:text-xl"
+          set:html={description}
+        />
+      )}
+    </Cell>
+  </GridContainer>
   <slot />
 </header>

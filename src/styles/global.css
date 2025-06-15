@@ -2,8 +2,8 @@
 
 :root {
   /* CUSTOM COLOR TOKENS */
-  --color-brand: oklch(0.6173 0.201 27.325);
-  --color-brand-foreground: oklch(0.95 0.0592 27.325);
+  --color-brand: oklch(0.6732 0.201 27.325);
+  --color-brand-foreground: oklch(0.9537 0.0166 27.325);
   --color-ai: oklch(0.5933 0.249 294.35);
   --color-ai-foreground: oklch(0.99 0.12 294.35);
   --color-success: oklch(0.5206 0.1061 162.48);
@@ -13,13 +13,17 @@
   --color-warning-muted: oklch(0.726 0.1677 51.88);
   --color-warning-muted-foreground: oklch(0.25 0.0345 51.88);
   --color-error: oklch(0.6173 0.201 27.325);
-  --color-error-foreground: oklch(0.95 0.0865 27.325);
+  --color-error-foreground: oklch(0.9537 0.0166 27.325);
   --color-cool: var(--color-success);
   --color-cool-foreground: var(--color-success-foreground);
+  --color-cool: var(--color-success);
+  --color-cool-foreground: var(--color-success-foreground);
+  --color-hot: var(--color-error);
+  --color-hot-foreground: var(--color-error-foreground);
 
-  /* TAILWIND & SHADCN TOKENS */
+  /* SHADCN TOKENS */
   --background: oklch(0.985 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.274 0.0091 41.87);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -29,11 +33,11 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.274 0.0091 41.87 / 0.5);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.6173 0.201 27.325);
-  --destructive-foreground: oklch(0.95 0.0865 27.325);
+  --destructive-foreground: oklch(0.9537 0.0166 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -55,24 +59,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* CUSTOM COLOR TOKENS */
-    --color-brand: oklch(0.6173 0.201 27.325);
-    --color-brand-foreground: oklch(0.95 0.0592 27.325);
-    --color-ai: oklch(0.5933 0.249 294.35);
-    --color-ai-foreground: oklch(0.99 0.12 294.35);
-    --color-success: oklch(0.5206 0.1061 162.48);
-    --color-success-foreground: oklch(0.95 0.0592 162.48);
-    --color-warning: oklch(0.9912 0.148 109.72);
-    --color-warning-foreground: oklch(0.25 0.0345 51.88);
-    --color-warning-muted: oklch(0.726 0.1677 51.88);
-    --color-warning-muted-foreground: oklch(0.25 0.0345 51.88);
-    --color-error: oklch(0.6173 0.201 27.325);
-    --color-error-foreground: oklch(0.15 0.0865 27.325);
-    --color-cool: var(--color-success);
-    --color-cool-foreground: var(--color-success-foreground);
-
-    /* TAILWIND & SHADCN TOKENS */
-    --background: oklch(0.12 0.148 109.72);
+    /* SHADCN TOKENS */
+    --background: oklch(0.274 0.0091 41.87);
     --foreground: oklch(0.99 0.03 109.72);
     --card: oklch(0.145 0 0);
     --card-foreground: oklch(0.985 0 0);
@@ -82,14 +70,14 @@
     --primary-foreground: oklch(0.145 0 0);
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
+    --muted: oklch(0.274 0.0091 41.87);
     --muted-foreground: oklch(0.708 0 0);
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.95 0.0865 27.325);
+    --destructive: oklch(0.9537 0.0166 27.325);
     --destructive-foreground: oklch(0.6173 0.201 27.325);
-    --border: oklch(0.269 0 0);
-    --input: oklch(0.269 0 0);
+    --border: oklch(0.35 0.0091 41.87);
+    --input: var(--border);
     --ring: oklch(0.439 0 0);
     --chart-1: oklch(0.488 0.243 264.376);
     --chart-2: oklch(0.696 0.17 162.48);
@@ -158,6 +146,8 @@
   --color-error-foreground: var(--color-error-foreground);
   --color-cool: var(--color-cool);
   --color-cool-foreground: var(--color-cool-foreground);
+  --color-hot: var(--color-hot);
+  --color-hot-foreground: var(--color-hot-foreground);
 
   --font-sans: 'IBM Plex Sans', 'Geist Sans', 'Inter', 'sans-serif';
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'monaco', 'monospace';
@@ -180,4 +170,3 @@
     @apply bg-background text-foreground;
   }
 }
-

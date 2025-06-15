@@ -1,5 +1,8 @@
 ---
 import BaseHead from '@/components/BaseHead.astro';
+import MainFooter from '@/components/MainFooter.astro';
+import MainHeader from '@/components/MainHeader.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 
 interface Props {
   title: string;
@@ -17,16 +20,329 @@ const siteDescription = "constantx"; // Add your site description
   <head>
     <BaseHead title={title} description={description || siteDescription} />
   </head>
-  
-  <body class:list={['min-h-screen', classList]}>
-    <slot />
+
+  <body class:list={['flex flex-col min-h-screen', classList]}>
+    <MainHeader title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <MainFooter title={SITE_TITLE} class:list={['border-t border-border']}/>
   </body>
+  
 </html> 
 
-<style>
+<style is:global>
   @reference "../styles/global.css";
 
   body {
     background: var(--color-background);
+  }
+
+  .prose {
+    @apply text-foreground;
+    line-height: 1.6;
+
+    /* --------------------------------------- LAYOUT */
+    .hero {
+      @apply col-span-full sm:col-[2_/_-1] lg:col-[2_/_-1]; 
+      @apply min-h-[50vh];
+      @apply flex flex-col justify-end;
+      @apply mb-16;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
+      @apply col-span-full sm:col-[2_/_-1] md:col-[3_/_6] lg:col-[3_/_-2] xl:col-[3_/_-2];
+      @apply px-4 sm:p-0;
+    }
+
+    p, ul, ol {
+      @apply lg:max-w-prose;
+    }
+
+    p:has(> img) {
+      @apply px-0;
+    }
+    
+    img, table, hr {
+      @apply col-span-full;
+    }
+    
+    pre, table, hr {
+      @apply col-span-full md:col-[1_/_-1] lg:col-[2_/_-1] xl:col-[2_/_-2];
+    }
+
+    /* Special layout classes for layout within specific post */
+    .col-full {
+      @apply col-span-full;
+    }
+
+    .col-wide {
+      @apply col-span-full md:col-[2_/_-1];
+    }
+    
+    .col-left {
+      @apply col-span-full md:col-[1_/_span_1];
+    }
+
+    .col-right {
+      @apply col-span-full md:col-[span_1_/_-1];
+    }
+
+    .col-left-sidebar {
+      @apply col-span-full md:col-[1_/_span_2];
+    }
+
+    .col-right-sidebar {
+      @apply col-span-full md:col-[span_2_/_-1];
+    }
+    
+    .footnotes {
+      @apply col-span-full md:col-[1_/_span_4];
+      @apply mt-48 pt-6;
+    }
+
+    /* --------------------------------------- TYPOGRAPHY */
+
+    p, ul, ol, div {
+      @apply text-sm sm:text-base lg:text-lg xl:text-xl;
+    }
+
+    table {
+      @apply text-xs md:text-sm lg:text-base;
+    }
+
+    kbd {
+      @apply text-xs md:text-sm lg:text-base;
+    }
+
+    h1 {
+      @apply text-4xl md:text-5xl my-4;
+      line-height: 1.2;
+    }
+
+    h2 {
+      @apply text-3xl md:text-4xl my-4;
+      @apply text-foreground;
+      @apply border-b border-border pb-2;
+      @apply font-bold;
+    }
+
+    h3 {
+      @apply text-2xl md:text-3xl my-4;
+      @apply text-foreground;
+    }
+
+    h4 {
+      @apply text-xl md:text-2xl my-2;
+      @apply text-foreground;
+    }
+
+    h5 {
+      @apply text-lg md:text-xl my-2;
+      @apply text-foreground;
+    }
+
+    h6 {
+      @apply text-base my-2;
+      @apply text-muted-foreground;
+    }
+
+    p {
+      @apply text-foreground;
+    }
+
+    em {
+      @apply italic;
+      @apply text-foreground;
+    }
+
+    strong {
+      @apply font-semibold;
+      @apply text-foreground;
+    }
+
+    mark {
+      @apply bg-warning text-warning-foreground px-1;
+    }
+
+    sub {
+      @apply text-xs;
+      vertical-align: sub;
+    }
+
+    sup {
+      @apply text-xs;
+      @apply ml-1;
+      
+      a {
+        @apply no-underline;
+      }
+    }
+
+    /* Links */
+    a {
+      @apply text-brand underline decoration-brand;
+      @apply underline-offset-4;
+      @apply hover:decoration-brand transition-colors;
+    }
+
+    /* Images */
+    img {
+      @apply shadow-sm my-6 md:rounded-lg;
+      @apply border border-border;
+      max-width: 100%;
+      height: auto;
+      justify-self: center;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      @apply border-l-4 border-brand pl-6 py-2 my-6;
+      @apply bg-muted/50 rounded-r-lg;
+      @apply italic text-muted-foreground;
+
+      p {
+        @apply mb-4 last:mb-0;
+      }
+
+      cite {
+        @apply text-muted-foreground not-italic;
+      }
+    }
+
+    /* Code */
+    code {
+      @apply bg-muted text-foreground px-1.5 py-0.5 rounded text-sm;
+      @apply font-mono;
+    }
+
+    /* Code blocks */
+    pre {
+      @apply bg-muted p-6;
+      @apply overflow-x-auto;
+      @apply text-sm;
+
+      code {
+        @apply p-0;
+      }
+    }
+
+    /* Keyboard input */
+    kbd {
+      @apply bg-warning text-warning-foreground;
+      @apply px-2 py-1 font-mono uppercase tracking-wider;
+      @apply border border-border;
+    }
+
+    /* Lists */
+    ul {
+      @apply list-disc pl-6 mb-4 ml-4 space-y-1;
+
+      ul {
+        @apply mt-1 mb-0;
+      }
+
+      ol {
+        @apply mt-1 mb-0;
+      }
+    }
+
+    ol {
+      @apply list-decimal pl-6 mb-4 ml-4 space-y-1;
+
+      ol {
+        @apply mt-1 mb-0;
+      }
+
+      ul {
+        @apply mt-1 mb-0;
+      }
+    }
+
+    /* Tables */
+    table {
+      @apply w-full my-8 border-collapse;
+      @apply border border-border rounded-lg overflow-hidden;
+      
+      th {
+        @apply bg-muted text-muted-foreground;
+        @apply px-4 py-2 text-left border-b border-border;
+        @apply whitespace-nowrap;
+      }
+  
+      td {
+        @apply px-4 py-2 border-b border-border;
+        @apply text-foreground;
+        @apply align-top;
+      }
+  
+      tr:last-child td {
+        @apply border-b-0;
+      }
+  
+      tr:nth-child(even) {
+        @apply bg-muted/30;
+      }
+    }
+
+
+    /* Horizontal rules */
+    hr {
+      @apply border-0 border-t border-border my-8;
+    }
+
+    /* Abbreviations */
+    abbr {
+      @apply underline decoration-dotted cursor-help;
+      @apply text-foreground;
+    }
+
+    /* Footnotes */
+    .footnotes {
+      @apply border-border;
+      @apply p-4;
+
+      p, ol, ul {
+        @apply max-w-full;
+        @apply text-sm text-muted-foreground;
+        @apply p-0;
+      }
+      
+      p {
+        @apply mb-0;
+      }
+
+      a {
+        @apply text-muted-foreground decoration-muted-foreground;
+      }
+    }
+
+    .footnote-ref {
+      @apply text-brand no-underline;
+      @apply hover:underline;
+    }
+
+    /* Code syntax highlighting adjustments */
+    /* https://docs.astro.build/en/guides/syntax-highlighting/ */
+    .astro-code,
+    .astro-code span {
+      @apply text-sm;
+
+      code {
+        @apply bg-transparent;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .astro-code,
+      .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        /* Optional, if you also want font styles */
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
+      }
+    }
   }
 </style>

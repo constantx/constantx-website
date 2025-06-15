@@ -57,7 +57,7 @@ _Italic text_ (`_italic_`) provides subtle emphasis for book titles, foreign wor
 Images are automatically responsive and styled with rounded corners, subtle shadows, and border styling. They center themselves within their grid column and include proper alt text for accessibility.
 
 ```markdown
-![Alt text describing the image](./path/to/image.jpg)
+![Alt text](./path/image.jpg)
 ```
 
 ![blog placeholder](https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
@@ -84,7 +84,8 @@ Blockquotes highlight important excerpts, testimonials, or referenced content. T
 
 For quotes with attribution, use the `<cite>` tag and footnote references:
 
-> To see the world, things dangerous to come to, to see behind walls, draw closer, to find each other, and to feel. That is the purpose of life.<br>
+> To see the world, things dangerous to come to, to see behind walls, draw closer, to find each other, and to feel. That is the purpose of life.
+>
 > — <cite>The Secret Life of Walter Mitty[^1]</cite>
 
 [^1]: https://en.wikipedia.org/wiki/The_Secret_Life_of_Walter_Mitty_(2013_film)
@@ -226,20 +227,20 @@ Regular text content (paragraphs, headings, lists) automatically positions itsel
 
 #### Special Layout Classes
 
-<div class="col-full p-4" style="background: var(--color-brand); color: var(--color-brand-foreground);border-radius: 0.5rem; margin: 1rem 0;">
-<strong>col-full</strong>: Spans all 6 columns. Perfect for full-width content like banners, hero images, or important announcements that need maximum visual impact.
+<div class="col-full p-4 bg-brand text-brand-foreground">
+  <strong>col-full</strong>: Spans all 6 columns. Perfect for full-width content like banners, hero images, or important announcements that need maximum visual impact.
 </div>
 
-<div class="col-wide p-4" style="background: var(--color-muted);border-radius: 0.5rem;">
-<strong>col-wide</strong>: Spans columns 2-6. Ideal for content that needs more space than regular text but should maintain some margin, such as large code blocks, data tables, or featured images.
+<div class="col-wide p-4 bg-brand text-brand-foreground">
+  <strong>col-wide</strong>: Spans columns 2-6. Ideal for content that needs more space than regular text but should maintain some margin, such as large code blocks, data tables, or featured images.
 </div>
 
-<div class="col-left-sidebar p-4" style="background: var(--color-secondary); color: var(--color-secondary-foreground);border-radius: 0.5rem; margin: 1rem 0; font-size: 0.875rem;">
-<strong>col-left-sidebar</strong>: Narrow left column (columns 1-2). Perfect for metadata, author information, publication dates, or supplementary notes that complement the main content.
+<div class="col-left-sidebar p-4 bg-brand text-brand-foreground">
+  <strong>col-left-sidebar</strong>: Narrow left column (columns 1-2). Perfect for metadata, author information, publication dates, or supplementary notes that complement the main content.
 </div>
 
-<div class="col-right-sidebar p-4" style="background: var(--color-accent); color: var(--color-accent-foreground);border-radius: 0.5rem; margin: 1rem 0; font-size: 0.875rem;">
-<strong>col-right-sidebar</strong>: Narrow right column (columns 5-6). Excellent for pull quotes, call-out boxes, related links, or highlighted information that supports the main narrative.
+<div class="col-right-sidebar p-4 bg-brand text-brand-foreground">
+  <strong>col-right-sidebar</strong>: Narrow right column (columns 5-6). Excellent for pull quotes, call-out boxes, related links, or highlighted information that supports the main narrative.
 </div>
 
 #### Usage Guidelines
