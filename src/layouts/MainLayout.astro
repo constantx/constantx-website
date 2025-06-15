@@ -188,8 +188,7 @@ const siteDescription = "constantx"; // Add your site description
 
     /* Images */
     img {
-      @apply shadow-sm my-6 md:rounded-lg;
-      @apply border border-border;
+      @apply shadow-sm my-6 md:rounded-xl;
       max-width: 100%;
       height: auto;
       justify-self: center;
@@ -212,8 +211,10 @@ const siteDescription = "constantx"; // Add your site description
 
     /* Code */
     code {
-      @apply bg-muted text-foreground px-1.5 py-0.5 rounded text-sm;
       @apply font-mono;
+      @apply bg-muted text-foreground;
+      @apply px-1.5 py-0.5 rounded;
+      @apply text-sm md:text-base lg:text-lg;
     }
 
     /* Code blocks */
