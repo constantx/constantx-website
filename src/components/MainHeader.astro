@@ -12,13 +12,13 @@ const { title, description, class: className } = Astro.props;
 
 <header class:list={`relative ${className}`}>
   <GridContainer>
-    <Cell class="whitespace-nowrap col-span-1">
+    <Cell class="whitespace-nowrap col-span-2 sm:col-span-1">
       <h1 class="text-sm sm:text-base lg:text-lg xl:text-xl font-bold"
         set:html={title}
       />
     </Cell>
     {description && (
-      <Cell class="whitespace-nowrap col-span-5">
+      <Cell class="whitespace-nowrap col-span-4 sm:col-span-5">
         <h2 
           class="text-sm sm:text-base lg:text-lg xl:text-xl"
           set:html={description}
