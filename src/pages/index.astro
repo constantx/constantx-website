@@ -28,12 +28,12 @@ const {
   <div class="flex flex-col">
     <div class="flex-1">
       <GridContainer>
-        <Cell class="col-span-5 md:col-span-4 lg:col-[2_/_span_3] xl:col-[2_/_span_3] 2xl:col-[2_/_span_2] prose grid grid-cols-1 gap-4 text-pretty">
+        <Cell class="col-span-full sm:col-[2/span_5] md:col-[2/span_4] xl:col-[2/span_3] 2xl:col-[2/span_2] prose grid grid-cols-1 gap-4 text-pretty">
           <Content />
         </Cell>
 
         { thoughts.length > 0 && (
-          <Cell class="col-span-full md:col-[span_2_/_-1] 2xl:col-[span_3_/_-1]">
+          <Cell class="col-span-full md:col-[2/span_4] xl:col-span-2 2xl:col-span-3">
             <RecentThoughts thoughts={thoughts} />
           </Cell>
         )}

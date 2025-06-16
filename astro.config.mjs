@@ -22,4 +22,7 @@ export default defineConfig({
   experimental: {
     responsiveImages: true,
   },
+  server: {
+    open: true,
+  },
 });
