@@ -103,8 +103,12 @@ const siteDescription = "constantx"; // Add your site description
 
     /* --------------------------------------- TYPOGRAPHY */
 
-    p, ul, ol, div, kbd {
+    p, ul, ol, div, kbd, {
       @apply text-base lg:text-lg;
+    }
+
+    pre, code {
+      @apply text-sm lg:text-base;
     }
 
     table {
@@ -205,19 +209,17 @@ const siteDescription = "constantx"; // Add your site description
       }
     }
 
-    /* Code */
+    /* Inline Code */
     code {
       @apply font-mono;
-      @apply bg-muted text-foreground;
-      @apply px-1.5 py-0.5 rounded;
-      @apply text-sm md:text-base lg:text-lg;
+      @apply bg-warning/90 text-warning-foreground;
+      @apply px-1 py-0.5 rounded-sm;
     }
 
     /* Code blocks */
     pre {
       @apply bg-muted p-6;
       @apply overflow-x-auto;
-      @apply text-sm;
 
       code {
         @apply p-0;
