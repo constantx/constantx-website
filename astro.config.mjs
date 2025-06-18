@@ -21,6 +21,7 @@ export default defineConfig({
   },
   experimental: {
     responsiveImages: true,
+    contentIntellisense: true,
   },
   server: {
     open: true,

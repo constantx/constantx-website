@@ -1,5 +1,6 @@
 ---
-import Layout from '@/layouts/PostLayout.astro';
+import PostLayout from '@/layouts/PostLayout.astro';
+import { Image } from 'astro:assets';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -9,20 +10,40 @@ export async function getStaticPaths() {
     props: thought,
   }));
 }
+
 type Props = CollectionEntry<'thoughts'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+const postClass = post.data.heroImage 
+  ? '-mt-18 mb-16' 
+  : '';
 ---
 
-<Layout {...post.data}>
-  <div class="hero">
-    <div class="text-sm text-muted-foreground px-4 sm:p-0">
-      {post.data.publishedAt.toLocaleDateString()}
+<PostLayout title={post.data.title} description={post.data.description} post={post}>
+  {post.data.heroImage && (
+    <div class="w-full h-100vh md:aspect-video md:max-h-[75vh] col-span-full overflow-hidden">
+      <Image
+        src={post.data.heroImage} 
+        alt={post.data.title} 
+        layout="full-width"
+        priority={true}
+        width={1200}
+        height={800}
+        class="z-0 m-0"
+      />
     </div>
-    <h1 class="text-balance leading-snug font-bold text-4xl md:text-7xl lg:text-8xl">
+  )}
+  <div class:list={`relative col-span-full md:col-[1_/_-1] lg:col-[2_/_-1] p-4 md:p-6 ${postClass}`}>
+    <div>
+      <span class="inline-block text-sm bg-foreground text-background px-4! md:px-6! py-2 leading-4">
+        {post.data.publishedAt.toLocaleDateString()}
+      </span>
+    </div>
+    <h1 class="text-balance leading-snug font-bold text-4xl md:text-7xl lg:text-8xl bg-foreground text-background inline-block px-4! md:px-6! py-2! mt-0!">
       {post.data.title}
     </h1>
   </div>
   <Content />
-</Layout>
+</PostLayout>

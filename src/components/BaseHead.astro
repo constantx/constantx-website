@@ -9,21 +9,24 @@ import '@fontsource/ibm-plex-sans/400-italic.css';
 import '@fontsource/ibm-plex-sans/400.css';
 import '@fontsource/ibm-plex-sans/700-italic.css';
 import '@fontsource/ibm-plex-sans/700.css';
-import { SITE_TITLE } from '../consts';
+import type { CollectionEntry } from 'astro:content';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import '../styles/global.css';
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+	title?: string;
+	description?: string;
+	image?: string; 
+	post?: CollectionEntry<'thoughts'>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { 
-  title, 
-  description, 
-  image = '/blog-placeholder-1.jpg' 
+  title = SITE_TITLE, 
+  description = SITE_DESCRIPTION, 
+  image = '/images/hero.jpg',
+  // post
 } = Astro.props;
 ---
 

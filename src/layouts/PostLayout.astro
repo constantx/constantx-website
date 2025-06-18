@@ -1,24 +1,18 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
+import { type CollectionEntry } from 'astro:content';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
-  publishedAt: Date;
-  updatedAt?: Date;
-  heroImage?: string;
-  topics?: string[];
-  draft?: boolean;
+  post: CollectionEntry<'thoughts'>;
 }
 
-const { 
-  title, 
-  description,
-} = Astro.props;
+const { title, description, post } = Astro.props;
 ---
 
-<MainLayout title={title} description={description}>
-  <article class="prose grid grid-cols-6 gap-4">
+<MainLayout title={title} description={description} post={post}>
+  <article class="prose grid grid-cols-6 gap-4 relative">
     <slot />
   </article>
 </MainLayout>

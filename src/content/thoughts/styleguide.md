@@ -2,7 +2,7 @@
 title: Styleguide
 description: "Complete reference for all Markdown elements supported in articles"
 publishedAt: "2025-06-01"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/images/hero.jpg"
 topics:
   - styleguide
   - reference
@@ -60,7 +60,7 @@ Images are automatically responsive and styled with rounded corners, subtle shad
 ![Alt text](./path/image.jpg)
 ```
 
-![blog placeholder](https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![example image](https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 **Features:**
 

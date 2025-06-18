@@ -3,22 +3,36 @@ import BaseHead from '@/components/BaseHead.astro';
 import MainFooter from '@/components/MainFooter.astro';
 import MainHeader from '@/components/MainHeader.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
   isHomepage?: boolean;
   class?: string[];
+  image?: string;
+  post?: CollectionEntry<'thoughts'>;
 }
 
-const { title, description, class: classList } = Astro.props;
-const siteDescription = "constantx"; // Add your site description
+const { 
+  title,
+  description, 
+  class: classList,
+  image = '/images/hero.jpg',
+  post
+} = Astro.props;
+
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <BaseHead title={title} description={description || siteDescription} />
+    <BaseHead 
+      title={post?.data.title || title} 
+      description={post?.data.description || description} 
+      image={post?.data.heroImage || image}
+      post={post}
+    />
   </head>
 
   <body class:list={['flex flex-col min-h-screen', classList]}>
@@ -43,12 +57,7 @@ const siteDescription = "constantx"; // Add your site description
     line-height: 1.6;
 
     /* --------------------------------------- LAYOUT */
-    .hero {
-      @apply col-span-full sm:col-[2_/_-1] lg:col-[2_/_-1]; 
-      @apply min-h-[50vh];
-      @apply flex flex-col justify-end;
-      @apply mb-16;
-    }
+    
 
     h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
       @apply col-span-full sm:col-[2_/_-1] md:col-[3_/_6] lg:col-[3_/_-2] xl:col-[3_/_-2];
@@ -98,32 +107,36 @@ const siteDescription = "constantx"; // Add your site description
     
     .footnotes {
       @apply col-span-full md:col-[1_/_span_4];
-      @apply mt-48 pt-6;
     }
 
     /* --------------------------------------- TYPOGRAPHY */
-
+    
     p, ul, ol, div, kbd, {
       @apply text-base lg:text-lg;
+      @apply text-pretty;
     }
-
+    
     pre, code {
       @apply text-sm lg:text-base;
     }
-
+    
     table {
       @apply text-xs md:text-sm lg:text-base;
     }
     
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-balance;
+      line-height: 1.4;
+    }
+    
     h1 {
       @apply text-4xl md:text-5xl my-4;
-      line-height: 1.2;
     }
 
     h2 {
       @apply text-3xl md:text-4xl my-4;
       @apply text-foreground;
-      @apply border-b border-border pb-2;
+      @apply border-b border-border pb-4;
       @apply font-bold;
     }
 
@@ -187,8 +200,8 @@ const siteDescription = "constantx"; // Add your site description
     }
 
     /* Images */
-    img {
-      @apply shadow-sm my-6 md:rounded-xl;
+    p img {
+      @apply my-6 md:rounded-xl;
       max-width: 100%;
       height: auto;
       justify-self: center;
@@ -298,8 +311,8 @@ const siteDescription = "constantx"; // Add your site description
 
     /* Footnotes */
     .footnotes {
-      @apply border-border;
-      @apply p-4;
+      @apply mt-20;
+      @apply p-4 md:p-6;
 
       p, ol, ul {
         @apply max-w-full;
