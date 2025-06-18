@@ -1,5 +1,5 @@
 ---
-title: "Connection Catalysts, and a New Journey"
+title: "Connection Catalysts"
 description: "How AI agents could solve our loneliness crisis by facilitating better human connections"
 publishedAt: "2025-06-18"
 heroImage: "/images/hero.jpg"
