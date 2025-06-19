@@ -20,7 +20,7 @@ draft: false
 
 ---
 
-I'm returning to builder mode. This newly refreshed site will serve as my public experiment space and thoughts journal—a place to share what I'm learning as I build.
+I'm returning to founder mode. This newly refreshed site will serve as a public experiment space and thoughts journal—a place to share what I'm learning as I build.
 
 Since 2024, after exiting my last venture (Chopp, an on-demand grocery startup), I've focused on what matters most: health, friends, and family. I read voraciously now—aiming for 50 books this year and already on number 27. Reading has been transformative, but that's a topic for another post.
 
