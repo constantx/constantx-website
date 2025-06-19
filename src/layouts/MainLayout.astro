@@ -222,21 +222,16 @@ const {
       }
     }
 
-    /* Inline Code */
-    code {
+    /* Inline Code - only target code NOT inside pre blocks */
+    :not(pre) > code {
       @apply font-mono;
-      @apply bg-warning/90 text-warning-foreground;
+      @apply bg-muted text-muted-foreground;
       @apply px-1 py-0.5 rounded-sm;
     }
 
-    /* Code blocks */
+    /* Code blocks - minimal styling, let Shiki handle syntax highlighting */
     pre {
-      @apply bg-muted p-6;
-      @apply overflow-x-auto;
-
-      code {
-        @apply p-0;
-      }
+      @apply my-6 rounded-lg overflow-x-auto;
     }
 
     /* Keyboard input */
@@ -336,15 +331,8 @@ const {
 
     /* Code syntax highlighting adjustments */
     /* https://docs.astro.build/en/guides/syntax-highlighting/ */
-    .astro-code,
-    .astro-code span {
-      @apply text-sm;
-
-      code {
-        @apply bg-transparent;
-      }
-    }
-
+    
+    /* Only add dark mode support, let Shiki handle all other styling */
     @media (prefers-color-scheme: dark) {
       .astro-code,
       .astro-code span {
