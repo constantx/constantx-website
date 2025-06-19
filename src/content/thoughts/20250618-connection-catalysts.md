@@ -78,7 +78,7 @@ Think _The Social Dilemma_: platforms optimizing for engagement over wellbeing. 
 
 The crucial difference: exit strategy. Instead of maximizing time-on-platform, we need AI that becomes less necessary as human relationships strengthen.
 
-## Building Different
+## Building Differently
 
 The path forward requires different success metrics. Instead of engagement rates, measure relationship quality. Instead of user retention, graduate people to stronger human connections.
 
