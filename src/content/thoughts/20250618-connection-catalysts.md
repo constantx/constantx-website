@@ -52,8 +52,6 @@ The breakthrough isn't building better AI companions. It's **using AI to create 
 
 Like the robots in _Wall-E_—technology that brings isolated humans back together rather than replacing connection.
 
-## What Humans Need
-
 Starting from first principles: what do people fundamentally need from relationships?
 
 **Belonging** comes from being seen and accepted. AI can identify genuine commonalities—shared values, humor styles, life perspectives that create real resonance.
@@ -64,15 +62,13 @@ Starting from first principles: what do people fundamentally need from relations
 
 **Authentic reciprocity** remains uniquely human. But AI can create conditions for safe vulnerability and genuine exchange.
 
-## Early Signs Work
+## Early Signs
 
 Current applications hint at this potential. **Oracle Health's AI saves physicians 66 minutes daily**[^4]—time redirected toward patients. **AI verification blocks 95% of fake dating profiles**[^5], creating trustworthy spaces.
 
 **63.3% of thoughtfully designed AI companion users report reduced loneliness**[^6]. "Thoughtfully designed" matters. Systems focused on skill-building show different outcomes than those optimized for dependency.
 
 The difference is intentional design for human flourishing versus attention capture.
-
-## Navigating Real Risks
 
 The dangers are real. **25% of young adults believe AI could replace human relationships entirely**[^7]. Some users report decreased human support—a concerning substitution effect.
 
@@ -96,7 +92,7 @@ Picture AI systems that:
 
 This isn't about perfect AI relationships. It's about using AI to create conditions for beautifully imperfect human ones.
 
-## The Choice Ahead
+## Next
 
 AI will reshape human relationships—that's certain. The question is whether it enhances authentic connection or provides sophisticated alternatives.
 
