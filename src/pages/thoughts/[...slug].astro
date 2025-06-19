@@ -1,5 +1,6 @@
 ---
 import PostLayout from '@/layouts/PostLayout.astro';
+import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
@@ -16,9 +17,7 @@ type Props = CollectionEntry<'thoughts'>;
 const post = Astro.props;
 const { Content } = await render(post);
 
-const postClass = post.data.heroImage 
-  ? '-mt-18 mb-16' 
-  : '';
+const postTitleClasses = cn('relative my-16 col-span-full md:col-[1_/_-1] lg:col-[2_/_-1]');
 ---
 
 <PostLayout title={post.data.title} description={post.data.description} post={post}>
@@ -35,13 +34,11 @@ const postClass = post.data.heroImage
       />
     </div>
   )}
-  <div class:list={`relative col-span-full md:col-[1_/_-1] lg:col-[2_/_-1] p-4 md:p-6 ${postClass}`}>
-    <div>
-      <span class="inline-block text-sm bg-foreground text-background px-4! md:px-6! py-2 leading-4">
-        {post.data.publishedAt.toLocaleDateString()}
-      </span>
+  <div class:list={`${postTitleClasses}`}>
+    <div class="text-sm px-4! md:px-6! py-2 leading-4">
+      {post.data.publishedAt.toLocaleDateString()}
     </div>
-    <h1 class="text-balance leading-snug font-bold text-4xl md:text-7xl lg:text-8xl bg-foreground text-background inline-block px-4! md:px-6! py-2! mt-0!">
+    <h1 class="inline-block text-balance! font-bold">
       {post.data.title}
     </h1>
   </div>
