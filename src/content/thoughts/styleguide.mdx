@@ -9,7 +9,13 @@ topics:
 draft: false
 ---
 
+import ColorGrid from "../../components/ColorGrid.tsx";
+
 This is a comprehensive styleguide demonstrating all supported Markdown elements and their visual styling in articles. Each section explains the purpose, appearance, and appropriate usage of different content types.
+
+## Colors (WIP)
+
+<ColorGrid />
 
 ## Headings
 
@@ -228,19 +234,27 @@ Regular text content (paragraphs, headings, lists) automatically positions itsel
 #### Special Layout Classes
 
 <div class="col-full p-4 bg-brand text-brand-foreground">
-  <strong>col-full</strong>: Spans all 6 columns. Perfect for full-width content like banners, hero images, or important announcements that need maximum visual impact.
+  <strong>col-full</strong>: Spans all 6 columns. Perfect for full-width content
+  like banners, hero images, or important announcements that need maximum visual
+  impact.
 </div>
 
 <div class="col-wide p-4 bg-brand text-brand-foreground">
-  <strong>col-wide</strong>: Spans columns 2-6. Ideal for content that needs more space than regular text but should maintain some margin, such as large code blocks, data tables, or featured images.
+  <strong>col-wide</strong>: Spans columns 2-6. Ideal for content that needs
+  more space than regular text but should maintain some margin, such as large
+  code blocks, data tables, or featured images.
 </div>
 
 <div class="col-left-sidebar p-4 bg-brand text-brand-foreground">
-  <strong>col-left-sidebar</strong>: Narrow left column (columns 1-2). Perfect for metadata, author information, publication dates, or supplementary notes that complement the main content.
+  <strong>col-left-sidebar</strong>: Narrow left column (columns 1-2). Perfect
+  for metadata, author information, publication dates, or supplementary notes
+  that complement the main content.
 </div>
 
 <div class="col-right-sidebar p-4 bg-brand text-brand-foreground">
-  <strong>col-right-sidebar</strong>: Narrow right column (columns 5-6). Excellent for pull quotes, call-out boxes, related links, or highlighted information that supports the main narrative.
+  <strong>col-right-sidebar</strong>: Narrow right column (columns 5-6).
+  Excellent for pull quotes, call-out boxes, related links, or highlighted
+  information that supports the main narrative.
 </div>
 
 #### Usage Guidelines
