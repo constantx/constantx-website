@@ -6,20 +6,22 @@
   --color-brand-foreground: oklch(0.9537 0.0166 27.325);
   --color-ai: oklch(0.5933 0.249 294.35);
   --color-ai-foreground: oklch(0.99 0.12 294.35);
-  --color-success: oklch(0.5206 0.1061 162.48);
-  --color-success-foreground: oklch(0.95 0.0592 162.48);
-  --color-warning: oklch(0.9912 0.148 109.72);
-  --color-warning-foreground: oklch(0.25 0.0345 51.88);
-  --color-warning-muted: oklch(0.726 0.1677 51.88);
-  --color-warning-muted-foreground: oklch(0.25 0.0345 51.88);
-  --color-error: oklch(0.6173 0.201 27.325);
-  --color-error-foreground: oklch(0.9537 0.0166 27.325);
-  --color-cool: var(--color-success);
-  --color-cool-foreground: var(--color-success-foreground);
-  --color-cool: var(--color-success);
-  --color-cool-foreground: var(--color-success-foreground);
-  --color-hot: var(--color-error);
-  --color-hot-foreground: var(--color-error-foreground);
+  
+  --color-hot: oklch(0.6732 0.201 27.325);
+  --color-hot-foreground: oklch(0.9537 0.0166 27.325);
+  --color-cool: oklch(0.5206 0.1061 162.48);
+  --color-cool-foreground: oklch(0.95 0.0592 162.48);
+  --color-warm: oklch(0.6955 0.1969 45.52);
+  --color-warm-foreground: oklch(0.25 0.0345 51.88);
+  --color-bright: oklch(0.9912 0.148 109.72);
+  --color-bright-foreground: oklch(0.25 0.0345 51.88);
+
+  --color-success: var(--color-cool);
+  --color-success-foreground: var(--color-cool-foreground);
+  --color-warning: var(--color-warm);
+  --color-warning-foreground: var(--color-warm-foreground);
+  --color-error: var(--color-hot);
+  --color-error-foreground: var(--color-hot-foreground);
 
   /* SHADCN TOKENS */
   --background: oklch(0.99 0.01 109.72);
@@ -36,8 +38,8 @@
   --muted-foreground: oklch(0.274 0.0091 41.87 / 0.5);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.6173 0.201 27.325);
-  --destructive-foreground: oklch(0.9537 0.0166 27.325);
+  --destructive: var(--color-hot);
+  --destructive-foreground: var(--color-hot-foreground);
   --border: oklch(0.89 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -46,7 +48,6 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
   --sidebar: oklch(0.99 0.01 109.72);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: var(--color-brand);
@@ -66,16 +67,16 @@
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(0.145 0 0);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.99 0.01 109.72);
+    --primary: oklch(0.99 0.01 109.72); /* primary is foreground */
     --primary-foreground: oklch(0.274 0.0091 41.87);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.274 0.0091 41.87);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.9537 0.0166 27.325);
-    --destructive-foreground: oklch(0.6173 0.201 27.325);
+    --secondary: oklch(0.3161 0.0162 41.87); /* brighter than background */
+    --secondary-foreground: oklch(0.99 0.01 109.72);
+    --muted: oklch(0.2876 0.0091 41.87);
+    --muted-foreground: oklch(0.4311 0.0115 41.87);
+    --accent: oklch(0.3793 0.0615 41.87);
+    --accent-foreground: oklch(0.99 0.01 109.72);
+    --destructive: var(--color-hot);
+    --destructive-foreground: var(--color-hot-foreground);
     --border: oklch(0.35 0.0091 41.87);
     --input: var(--border);
     --ring: oklch(0.439 0 0);
@@ -155,6 +156,7 @@
   --text-tiny: 0.625rem;
 
   --border-width: 1px;
+  --radius: 1rem;
 }
 
 @utility container {

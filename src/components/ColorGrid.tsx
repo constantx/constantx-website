@@ -36,12 +36,6 @@ const colors: ColorChip[] = [
     category: 'Status',
   },
   {
-    name: 'Warning Muted',
-    backgroundVar: 'var(--color-warning-muted)',
-    foregroundVar: 'var(--color-warning-muted-foreground)',
-    category: 'Status',
-  },
-  {
     name: 'Error',
     backgroundVar: 'var(--color-error)',
     foregroundVar: 'var(--color-error-foreground)',
@@ -50,15 +44,21 @@ const colors: ColorChip[] = [
   
   // Semantic colors
   {
+    name: 'Hot',
+    backgroundVar: 'var(--color-hot)',
+    foregroundVar: 'var(--color-hot-foreground)',
+    category: 'Semantic',
+  },
+  {
     name: 'Cool',
     backgroundVar: 'var(--color-cool)',
     foregroundVar: 'var(--color-cool-foreground)',
     category: 'Semantic',
   },
   {
-    name: 'Hot',
-    backgroundVar: 'var(--color-hot)',
-    foregroundVar: 'var(--color-hot-foreground)',
+    name: 'Bright',
+    backgroundVar: 'var(--color-bright)',
+    foregroundVar: 'var(--color-bright-foreground)',
     category: 'Semantic',
   },
   
@@ -103,36 +103,36 @@ const colors: ColorChip[] = [
   },
   
   // Chart colors
-  {
-    name: 'Chart 1',
-    backgroundVar: 'var(--color-chart-1)',
-    foregroundVar: 'var(--color-background)',
-    category: 'Charts',
-  },
-  {
-    name: 'Chart 2',
-    backgroundVar: 'var(--color-chart-2)',
-    foregroundVar: 'var(--color-background)',
-    category: 'Charts',
-  },
-  {
-    name: 'Chart 3',
-    backgroundVar: 'var(--color-chart-3)',
-    foregroundVar: 'var(--color-background)',
-    category: 'Charts',
-  },
-  {
-    name: 'Chart 4',
-    backgroundVar: 'var(--color-chart-4)',
-    foregroundVar: 'var(--color-background)',
-    category: 'Charts',
-  },
-  {
-    name: 'Chart 5',
-    backgroundVar: 'var(--color-chart-5)',
-    foregroundVar: 'var(--color-background)',
-    category: 'Charts',
-  },
+  // {
+  //   name: 'Chart 1',
+  //   backgroundVar: 'var(--color-chart-1)',
+  //   foregroundVar: 'var(--color-background)',
+  //   category: 'Charts',
+  // },
+  // {
+  //   name: 'Chart 2',
+  //   backgroundVar: 'var(--color-chart-2)',
+  //   foregroundVar: 'var(--color-background)',
+  //   category: 'Charts',
+  // },
+  // {
+  //   name: 'Chart 3',
+  //   backgroundVar: 'var(--color-chart-3)',
+  //   foregroundVar: 'var(--color-background)',
+  //   category: 'Charts',
+  // },
+  // {
+  //   name: 'Chart 4',
+  //   backgroundVar: 'var(--color-chart-4)',
+  //   foregroundVar: 'var(--color-background)',
+  //   category: 'Charts',
+  // },
+  // {
+  //   name: 'Chart 5',
+  //   backgroundVar: 'var(--color-chart-5)',
+  //   foregroundVar: 'var(--color-background)',
+  //   category: 'Charts',
+  // },
 ];
 
 export default function ColorGrid() {
@@ -147,7 +147,7 @@ export default function ColorGrid() {
   }, {} as Record<string, ColorChip[]>);
 
   return (
-    <div className="col-span-full space-y-8 p-4 lg:p-6 my-12">
+    <div className="col-span-inherit space-y-8 p-4 lg:p-6 my-12">
       {Object.entries(groupedColors).map(([category, categoryColors]) => (
         <div key={category}>
           <h5 className="text-muted-foreground mb-4 uppercase tracking-wider text-center">
@@ -162,7 +162,7 @@ export default function ColorGrid() {
                 onMouseLeave={() => setHoveredColor(null)}
               >
                 <div
-                  className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-lg border border-border shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-md cursor-pointer flex items-center justify-center p-2"
+                  className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-4xl transition-all duration-200 hover:scale-105 cursor-pointer flex items-center justify-center p-2"
                   style={{ 
                     backgroundColor: color.backgroundVar,
                     color: color.foregroundVar,
