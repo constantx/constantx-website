@@ -14,9 +14,9 @@ interface Props {
   post?: CollectionEntry<'thoughts'>;
 }
 
-const { 
+const {
   title,
-  description, 
+  description,
   class: classList,
   image = '/images/hero.jpg',
   post
@@ -27,9 +27,9 @@ const {
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <BaseHead 
-      title={post?.data.title || title} 
-      description={post?.data.description || description} 
+    <BaseHead
+      title={post?.data.title || title}
+      description={post?.data.description || description}
       image={post?.data.heroImage || image}
       post={post}
     />
@@ -42,8 +42,8 @@ const {
     </main>
     <MainFooter title={SITE_TITLE} class:list={['border-t border-border']}/>
   </body>
-  
-</html> 
+
+</html>
 
 <style is:global>
   @reference "../styles/global.css";
@@ -57,7 +57,7 @@ const {
     line-height: 1.6;
 
     /* --------------------------------------- LAYOUT */
-    
+
 
     h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, .col-span-inherit {
       @apply col-span-full sm:col-[2_/_-1] md:col-[3_/_6] lg:col-[3_/_-2] xl:col-[3_/_-2];
@@ -71,11 +71,11 @@ const {
     p:has(> img) {
       @apply px-0;
     }
-    
+
     img, table, hr {
       @apply col-span-full;
     }
-    
+
     pre, table, hr {
       @apply col-span-full md:col-[1_/_-1] lg:col-[2_/_-1] xl:col-[2_/_-2];
     }
@@ -88,7 +88,7 @@ const {
     .col-wide {
       @apply col-span-full md:col-[2_/_-1];
     }
-    
+
     .col-left {
       @apply col-span-full md:col-[1_/_span_1];
     }
@@ -104,31 +104,31 @@ const {
     .col-right-sidebar {
       @apply col-span-full md:col-[span_2_/_-1];
     }
-    
+
     .footnotes {
       @apply col-span-full md:col-[1_/_span_4];
     }
 
     /* --------------------------------------- TYPOGRAPHY */
-    
+
     p, ul, ol, div, kbd, {
       @apply text-base lg:text-lg;
       @apply text-pretty;
     }
-    
+
     pre, code {
       @apply text-sm lg:text-base;
     }
-    
+
     table {
       @apply text-xs md:text-sm lg:text-base;
     }
-    
+
     h1, h2, h3, h4, h5, h6 {
       @apply text-balance;
       line-height: 1.4;
     }
-    
+
     h1 {
       @apply text-5xl md:text-6xl! lg:text-7xl! leading-snug;
       @apply my-4;
@@ -186,7 +186,7 @@ const {
     sup {
       @apply text-xs;
       @apply ml-1;
-      
+
       a {
         @apply no-underline;
       }
@@ -209,8 +209,9 @@ const {
 
     /* Blockquotes */
     blockquote {
-      @apply border-l-4 border-brand pl-6 py-2 my-6;
-      @apply bg-muted/50 rounded-r-lg;
+      @apply inline-block;
+      @apply border-l-4 border-brand p-4 my-6;
+      @apply bg-muted/20;
       @apply italic text-muted-foreground;
 
       p {
@@ -270,23 +271,23 @@ const {
     table {
       @apply w-full my-8 border-collapse;
       @apply border border-border rounded-lg overflow-hidden;
-      
+
       th {
         @apply bg-muted text-muted-foreground;
         @apply px-4 py-2 text-left border-b border-border;
         @apply whitespace-nowrap;
       }
-  
+
       td {
         @apply px-4 py-2 border-b border-border;
         @apply text-foreground;
         @apply align-top;
       }
-  
+
       tr:last-child td {
         @apply border-b-0;
       }
-  
+
       tr:nth-child(even) {
         @apply bg-muted/30;
       }
@@ -314,7 +315,7 @@ const {
         @apply text-sm text-muted-foreground;
         @apply p-0;
       }
-      
+
       p {
         @apply mb-0;
       }
@@ -331,7 +332,7 @@ const {
 
     /* Code syntax highlighting adjustments */
     /* https://docs.astro.build/en/guides/syntax-highlighting/ */
-    
+
     /* Only add dark mode support, let Shiki handle all other styling */
     @media (prefers-color-scheme: dark) {
       .astro-code,

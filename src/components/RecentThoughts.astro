@@ -11,7 +11,7 @@ interface Props {
 
 const { thoughts } = Astro.props;
 ---
-{ 
+{
   thoughts.length > 0 && (
     <section class="space-y-8">
       <h2 class="font-bold uppercase tracking-widest mb-4 text-sm sm:text-base lg:text-lg xl:text-xl">
@@ -22,14 +22,14 @@ const { thoughts } = Astro.props;
           const formattedDate = moment(post.data.publishedAt).format('YYYY-MM-DD');
           return (
             <li class="list-none flex items-center">
-              <a 
+              <a
                 href={`/thoughts/${post.id}/`}
                 class="group inline-block text-sm sm:text-base hover:-translate-y-1 hover:-translate-x-2 transition duration-300"
               >
+                <span class="text-muted-foreground font-mono text-xs mr-2">{formattedDate}</span>
                 <Hightlight class="mr-2 px-1">
-                  <span>{post.data.title}</span>
+                  {post.data.title}
                 </Hightlight>
-                <span class="text-foreground font-mono">{formattedDate}</span>
               </a>
             </li>
           );
